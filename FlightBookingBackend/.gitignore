@@ -1,0 +1,25 @@
+# Ignore directories
+bin/
+obj/
+
+# Ignore user-specific files
+.vscode/
+.idea/
+.DS_Store
+.vscodeignore
+
+# Ignore build artifacts
+*.suo
+*.user
+*.sln.docstates
+
+# Ignore NuGet packages
+packages/
+
+# Ignore Visual Studio files
+*.userprefs
+
+# Ignore macOS system files
+.Spotlight-V100
+.Trashes
+__MACOSX/

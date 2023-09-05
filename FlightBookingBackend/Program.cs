@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Configuration;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -22,5 +24,15 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-app.Urls.Add("http://localhost:5000");
+// Read the URL from appsettings.json
+var configuration = new ConfigurationBuilder()
+    .SetBasePath(app.Environment.ContentRootPath)
+    .AddJsonFile("appsettings.json")
+    .Build();
+
+var applicationUrl = configuration.GetSection("MyConfig")["ApplicationUrl"];
+
+// Use the applicationUrl variable as needed
+
+app.Urls.Add(applicationUrl); // Set the application URL
 app.Run();

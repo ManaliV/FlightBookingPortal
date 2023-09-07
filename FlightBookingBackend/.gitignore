@@ -1,25 +1,36 @@
-# Ignore directories
+# .gitignore for ASP.NET Core on macOS
+
+# Ignore the bin and obj directories
 bin/
 obj/
 
 # Ignore user-specific files
-.vscode/
-.idea/
-.DS_Store
-.vscodeignore
+*.suo
+*.user
+*.userprefs
+*.sln.docstates
 
-# Ignore build artifacts
+# Visual Studio code files
+.vscode/
+
+# macOS-specific files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# User-specific files
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider
+.idea/
+
+# User-specific files
+*.suo
+*.user
 *.suo
 *.user
 *.sln.docstates
-
-# Ignore NuGet packages
-packages/
-
-# Ignore Visual Studio files
-*.userprefs
-
-# Ignore macOS system files
-.Spotlight-V100
-.Trashes
-__MACOSX/

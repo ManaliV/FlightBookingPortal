@@ -13,7 +13,7 @@ export class SearchFlightsComponent {
 
   constructor(private flightService: FlightService)
   {
-    this.flightService.flightGet()
+    this.flightService.searchFlight()
       .subscribe(response => this.searchResult = response, this.HandleError);
   }
 

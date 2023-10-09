@@ -8,16 +8,16 @@ import { RequestBuilder } from '../../request-builder';
 
 import { FlightRm } from '../../models/flight-rm';
 
-export interface FlightGet$Params {
+export interface SearchFlight$Plain$Params {
 }
 
-export function flightGet(http: HttpClient, rootUrl: string, params?: FlightGet$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<FlightRm>>> {
-  const rb = new RequestBuilder(rootUrl, flightGet.PATH, 'get');
+export function searchFlight$Plain(http: HttpClient, rootUrl: string, params?: SearchFlight$Plain$Params, context?: HttpContext): Observable<StrictHttpResponse<Array<FlightRm>>> {
+  const rb = new RequestBuilder(rootUrl, searchFlight$Plain.PATH, 'get');
   if (params) {
   }
 
   return http.request(
-    rb.build({ responseType: 'json', accept: 'text/json', context })
+    rb.build({ responseType: 'text', accept: 'text/plain', context })
   ).pipe(
     filter((r: any): r is HttpResponse<any> => r instanceof HttpResponse),
     map((r: HttpResponse<any>) => {
@@ -26,4 +26,4 @@ export function flightGet(http: HttpClient, rootUrl: string, params?: FlightGet$
   );
 }
 
-flightGet.PATH = '/Flight';
+searchFlight$Plain.PATH = '/Flight';

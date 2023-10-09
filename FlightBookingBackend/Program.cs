@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.AddServer(new OpenApiServer { Description = "Development Server", Url = "http://localhost:5000" });
+    c.CustomOperationIds(e => $"{e.ActionDescriptor.RouteValues["action"] + e.ActionDescriptor.RouteValues["controller"]}");
 });
 
 var app = builder.Build();

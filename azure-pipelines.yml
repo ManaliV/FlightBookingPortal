@@ -12,7 +12,7 @@ pool:
 variables:
   buildConfiguration: 'Release'
 
-  working_directory: FlightBookingBackend
+  working_directory: FlightBookingPortal/FlightBookingBackend
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
